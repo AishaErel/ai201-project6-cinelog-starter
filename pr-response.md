@@ -2,8 +2,6 @@
 
 ## AI Usage
 
-## AI Usage
-
 I used AI to understand the existing implementation in `services/collection_service.py` before adding the deduplication logic to `add_to_watchlist()`. I also asked AI to review my draft responses for Comments 4 and 5 to identify any tradeoffs or counterarguments I had not addressed. It highlighted privacy considerations for the default visibility setting and the consistency tradeoff between alphabetical and date-added sorting, so I revised my responses to acknowledge those points.
 ---
 
