@@ -76,19 +76,22 @@ After the rebase completed successfully, I reran the relevant tests and confirme
 
 ---
 
+##Log screenshot
+
+
+
 ## PR Description
 
-This pull request adds the watchlist feature for CineLog. Users can add films to a personal watchlist, retrieve their watchlist, and prevent duplicate entries from being created.
+This pull request adds the watchlist feature for CineLog. Users can add films to a personal watchlist, retrieve their watchlist, and duplicate entries are prevented.
 
 ### Design decisions
 
-* Reused the existing service-layer patterns established by the collection feature.
-* Added explicit duplicate detection using a custom `AlreadyInWatchlistError`.
-* Kept the watchlist sorting behavior consistent with the feature's intended user experience.
+- **Default visibility:** Watchlist entries default to `public=True` because CineLog is intended to be a social film-tracking platform where users can share what they plan to watch. Users can still change visibility later if needed.
+- **Sort order:** The watchlist is sorted alphabetically by title rather than by date added. This makes it easier for users to browse and find saved films, while the collection feature remains sorted by recency because it represents viewing history.
 
 ### Manual testing
 
-* Added a valid film to the watchlist.
-* Attempted to add the same film twice and confirmed a duplicate is rejected.
-* Attempted to add a nonexistent film and confirmed `FilmNotFoundError` is raised.
-* Retrieved the watchlist and confirmed the expected film information is returned.
+1. Add a valid film to the watchlist and confirm a `WatchlistEntry` is created.
+2. Add the same film again and confirm an `AlreadyInWatchlistError` is raised.
+3. Attempt to add a nonexistent film ID and confirm `FilmNotFoundError` is raised.
+4. Retrieve the watchlist and confirm the expected films are returned in alphabetical order with the `date_added` and `public` fields.
