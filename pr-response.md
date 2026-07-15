@@ -75,8 +75,7 @@ After the rebase completed successfully, I reran the relevant tests and confirme
 ---
 
 ## Log screenshot
-<img width="835" height="100" alt="Screenshot 2026-07-14 at 9 28 39 PM" src="https://github.com/user-attachments/assets/26ea1d9a-6981-46eb-b329-b819399817ac" />
-
+<img width="795" height="92" alt="Screenshot 2026-07-14 at 10 31 30 PM" src="https://github.com/user-attachments/assets/f545096a-b98a-4557-93b1-968fdc895149" />
 
 
 
